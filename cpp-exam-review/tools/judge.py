@@ -73,6 +73,8 @@ def judge(problem, cxx, timeout):
         env = os.environ.copy()
         resolved_cxx = shutil.which(cxx) or cxx
         env["PATH"] = str(Path(resolved_cxx).resolve().parent) + os.pathsep + env.get("PATH", "")
+        print(f"C++ compiler: {resolved_cxx}")
+        print("Build: main.cpp -> native executable (C++17, -O2, -Wall)")
         try:
             built = subprocess.run(
                 [cxx, "main.cpp", "-std=c++17", "-O2", "-Wall", "-o", str(executable)],
@@ -88,6 +90,7 @@ def judge(problem, cxx, timeout):
             return "Compile Error"
         if built.stdout:
             print(show(built.stdout))
+        print(f"Run native executable: {executable}")
         passed = 0
         for inp, out in pairs:
             data, expected = inp.read_bytes(), out.read_bytes()
