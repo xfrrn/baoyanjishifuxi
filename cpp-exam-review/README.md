@@ -6,7 +6,7 @@
 
 测评实际执行流程：`main.cpp → g++ 编译 → Windows 原生 .exe → 输入测试数据 → 比较输出`。Python 仅负责启动编译器、运行程序和判定结果，不解释或模拟 C++ 代码。每次测评会显示编译器路径和实际运行的程序路径。
 
-打开 [当前题目](problems/007-stock-records/README.md)，只编辑该题的 `main.cpp`。
+打开 [当前题目](problems/008-word-count/README.md)，只编辑该题的 `main.cpp`。
 
 在本目录执行（Python 3.9+、支持 C++17 的 g++）：
 
