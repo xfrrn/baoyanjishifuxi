@@ -1,7 +1,17 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
-int main() {
+int main(){
+    string line;
+    getline(cin,line);
 
-    return 0;
+    char first = line[0];
+
+    for(char Ch:line){
+       if(first!=Ch){
+        cout<<first;
+       }
+       first=Ch;
+    }
+    cout<<first;
 }
